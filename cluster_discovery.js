@@ -213,7 +213,7 @@ module.exports = {
             azure: {
                 parse: function(configuration) {
                     return _.map(_.flatten([configuration.leaders.instances, configuration.followers.instances]), function(instance) {
-                        if(instance.networkInterfaces && instance.ipConfigurations) {
+                        if(instance.networkInterfaces && instance.networkInterfaces.ipConfigurations) {
                             return `${instance.networkInterfaces.ipConfigurations[0].privateIPAddress}/32`;
                         }
                     });
